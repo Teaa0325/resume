@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Website
+  </title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Hey, I'm Tea</h1>
+    <p>✨ Developer • Wizard-in-Training • Fucking Bored ✨</p>
+  </header>
+  <div class="overlay"></div>
+  <section id="about">
+    <h2>About</h2>
+    <div class="container">
+      <div class="about-me" onclick="openModal(this)" data-title="About me" data-description=" I'm a XX-year-old developer from Leipzig, Germany. I love coding and creating new things. When I'm not coding,
+          you can find me listening to music or hanging out with friends.<br>
+          I started coding when I was 14, and since then, I've been working on various projects, including web development
+          and game development.">
+        <h3>This is who i am.</h3>
+      </div>
+      <div class="about-me" onclick="openModal(this)" data-title="About it" data-description=" I start an advanced course with a focus on computer science next month so i have to prepare for it the best i can. <br> <br> so here i am..">
+        <h3> Why i do this</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="container">
+      <div class="project" onclick="openModal(this)" data-image="back to life.png"
+        data-title="Zurück ins Leben (Back to Life)"
+        data-description="This is a project in collaboration with the “Umweltprofis von morgen” and “Stadtreinigung Leipzig” (Leipzig City Cleaning)<br><hr /> <br>First off, i started with brainstorming ideas. Then a colleague of mine suggested to make sumething similar to the city project in Prague. It's a project where the homeless/jobless people can get a job and earn housing and food by cleaning the streets. So I made a similar project for my city, but with a twist.<br> <br> I didnt just want to pick up trash, but i wanted to create a customer service where people could call us and we pick up their old furniture or other things they didnt need anymore. <br><br> I'll add the rest later"
+        data-image="images/project1.jpg"
+        <h3>Cool Project #1</h3>
+        <p>This is how i make a real customer service.</p>
+      </div>
+    </div>
+    <div class="project" onclick="openModal(this)" data-title="Cool Project #2"
+      data-description="This is how I make an online escape game.">
+      <h3>Cool Project #2</h3>
+      <p>THis is how i make a online escape game.</p>
+    </div>
+    </div>
+    <div class="project" onclick="openModal(this)" data-title="Chaotic Side Hustle"
+      data-description="I made these drawings 'cause I was fckin bored.">
+      <h3>Chaotic Side Hustle</h3>
+      <p>I made these drawings cus i was fckin bored.</p>
+    </div>
+  </section>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">&times;</span>
+      <img id="modal-image" src="" alt="" />
+      <h2 id="modal-title">Project Title</h2>
+      <p id="modal-description">This is the project description.</p>
+
+      <ul id="modal-details">
+
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <p>Find me on <a href="https://github.com/Teaa0325">GitHub</a> • <a
+        href="https://www.instagram.com/1versepiwonskz/">Instagram</a> • <a href="https://x.com/Stay_10800">Twitter</a>
+    </p>
+  </footer>
+
+  <script>
+    function openModal(projectElement) {
+      const title = projectElement.getAttribute("data-title");
+      const description = projectElement.getAttribute("data-description");
+      const image = projectElement.getAttribute("data-image");
+      const details = projectElement.getAttribute("data-details");
+
+      document.getElementById("modal-title").innerHTML = title;
+      document.getElementById("modal-description").innerHTML = description;
+      document.getElementById("modal-image").src = image;
+      document.getElementById("modal-details").innerHTML = details;
+
+      document.getElementById("modal").style.display = "block";
+    }
+
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+
+    window.onclick = function (event) {
+      const modal = document.getElementById("modal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+
+</body>
+
+</html>
