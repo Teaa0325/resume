@@ -64,12 +64,14 @@ p {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
   flex: 1;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  backdrop-filter: blur(5px);
+  background-color: rgba(82, 79, 79, 0.8);
 }
 
 .project:hover,
 .about-me:hover {
-  background-color: #524f4f8e;
+  background-color: #5a5757;
   transform: scale(1.01);
 }
 
